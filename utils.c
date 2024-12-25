@@ -37,3 +37,39 @@ int	ft_atoi(char *str)
 	result *= sign;
 	return (result);
 }
+
+size_t	get_current_time(void)
+{
+	struct timeval	time;
+
+	if (gettimeofday(&time, NULL) == -1)
+		printf("gettimeofday function error\n");
+	return (time.tv_sec * 1000 + time.tv_usec / 1000);
+}
+
+void	destroyer(char *str, t_program *program, pthread_mutex_t *forks)
+{
+	int	i;
+
+	i = 0;
+	if (str)
+		printf("%s\n", str);
+	pthread_mutex_destroy(&program->write_lock);
+	pthread_mutex_destroy(&program->meal_lock);
+	pthread_mutex_destroy(&program->dead_lock);
+	while (i < program->philos[0].num_of_philos)
+	{
+		pthread_mutex_destroy(&forks[i]);
+		i++;
+	}
+}
+
+int	ft_usleep(size_t millisec)
+{
+	size_t start;
+
+	start = get_current_time();
+	while ((get_current_time() - start) < millisec)
+		usleep(500);
+	return (0);
+}

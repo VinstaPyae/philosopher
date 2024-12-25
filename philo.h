@@ -38,4 +38,38 @@ typedef struct s_program
 	t_philo			*philos;
 }					t_program;
 
+//main
+int	check_args(char **argv);
+int	is_num(char *argv);
+
+//init
+void	init_program(t_program *program, t_philo *philos);
+void	init_forks(pthread_mutex_t *forks, int philo_num);
+void	init_input(t_philo *philo, char **argv);
+void	init_philos(t_philo *philos, t_program *program, pthread_mutex_t *forks, char **argv);
+
+//checker
+void	*checker(void *philosopher);
+void	show_message(char *str, t_philo *philo, int id);
+int	philo_dead(t_philo *philo, size_t time_to_die);
+int	check_dead(t_philo *philos);
+int	check_all_ate(t_philo *philos);
+
+//philo
+int	philo_thread(t_program *program, pthread_mutex_t *forks);
+int	dead_loop(t_philo *philo);
+
+//utils
+void	destroyer(char *str, t_program *program, pthread_mutex_t *forks);
+int	ft_usleep(size_t millisec);
+size_t	get_current_time(void);
+int	ft_atoi(char *str);
+int	ft_strlen(char *s);
+
+//actions
+void	philo_think(t_philo *philo);
+void	philo_sleep(t_philo *philo);
+void	philo_eat(t_philo *philo);
+void	*philo_action(void *philosopher);
+
 #endif

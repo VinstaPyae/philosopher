@@ -44,4 +44,6 @@ int	main(int argc, char **argv)
 	init_forks(forks, ft_atoi(argv[1]));
 	init_philos(philos, &program, forks, argv);
 	philo_thread(program, forks);
+	destroyer(NULL, &program, forks);
+	return (0);
 }

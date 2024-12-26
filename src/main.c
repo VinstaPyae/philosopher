@@ -17,7 +17,7 @@ int	is_num(char *argv)
 int	check_args(char **argv)
 {
 	if (ft_atoi(argv[1]) > PHILO_MAX || ft_atoi(argv[1]) <= 0
-		|| is_num(argv[1] == 1))
+		|| is_num(argv[1]) == 1)
 		return (printf("Invlid amount of philosophers!\n"), 1);
 	if (ft_atoi(argv[2]) <= 0 || is_num(argv[2]) == 1)
 		return (printf("Invlid time to die!\n"), 1);
@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 	init_program(&program, philos);
 	init_forks(forks, ft_atoi(argv[1]));
 	init_philos(philos, &program, forks, argv);
-	philo_thread(program, forks);
+	philo_thread(&program, forks);
 	destroyer(NULL, &program, forks);
 	return (0);
 }

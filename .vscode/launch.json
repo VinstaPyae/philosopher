@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "e:/42_SG_SUTD/Milestone_3/Philo/philosopher",
-      "program": "e:/42_SG_SUTD/Milestone_3/Philo/philosopher/build/Debug/outDebug",
+      "cwd": "e:/42_SG_SUTD/Milestone_3/Philo/philosopher/src",
+      "program": "e:/42_SG_SUTD/Milestone_3/Philo/philosopher/src/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

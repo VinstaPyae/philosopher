@@ -1,6 +1,6 @@
 NAME = philo
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -O3 -pthread
+CFLAGS = -Wall -Wextra -Werror -O3 -pthread -fsanitize=thread
 RM = rm -rf
 SRCS = main.c actions.c checker.c init.c philo.c utils.c
 SRC = $(addprefix ./src/,$(SRCS))

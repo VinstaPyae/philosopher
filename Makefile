@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/12/30 20:23:00 by pzaw              #+#    #+#              #
+#    Updated: 2024/12/30 20:23:00 by pzaw             ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = philo
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -O3 -pthread -fsanitize=thread
@@ -23,6 +35,3 @@ fclean: clean
 	@$(RM) $(NAME)
 
 re: fclean all
-
-debug: CFLAGS += -g
-debug: re

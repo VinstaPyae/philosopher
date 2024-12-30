@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/30 20:22:43 by pzaw              #+#    #+#             */
+/*   Updated: 2024/12/30 20:22:43 by pzaw             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 int	is_num(char *argv)
@@ -32,9 +44,9 @@ int	check_args(char **argv)
 
 int	main(int argc, char **argv)
 {
-	t_program	program;
-	t_philo		philos[PHILO_MAX];
 	pthread_mutex_t	forks[PHILO_MAX];
+	t_program		program;
+	t_philo			philos[PHILO_MAX];
 
 	if (argc != 5 && argc != 6)
 		return (printf("Invalid argument amount!\n"), 1);

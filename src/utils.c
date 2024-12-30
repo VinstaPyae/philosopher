@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pzaw <pzaw@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/30 20:22:56 by pzaw              #+#    #+#             */
+/*   Updated: 2024/12/30 20:22:56 by pzaw             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 int	ft_strlen(char *s)
@@ -66,10 +78,10 @@ void	destroyer(char *str, t_program *program, pthread_mutex_t *forks)
 
 int	ft_usleep(size_t millisec)
 {
-	size_t start;
+	size_t	start;
 
 	start = get_current_time();
 	while ((get_current_time() - start) < millisec)
-		usleep(500);
+		usleep(100);
 	return (0);
 }
